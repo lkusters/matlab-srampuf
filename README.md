@@ -1,4 +1,4 @@
-# srampuf
+# matlab-srampuf
 
 MATLAB project for analysing the SRAM-PUF data.
 Included functions:

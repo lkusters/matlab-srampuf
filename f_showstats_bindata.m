@@ -47,6 +47,26 @@ function f_showstats_bindata(bindata)
     title(sprintf('Hamming distance w.r.t. reference observation %d',...
         ref_obs));
     xlabel('obs.');ylabel('HD')
-
-
+    %% Average Hamming distance as function of time difference
+    timedif = 1:2:30;
+    HD_td = zeros(1,length(timedif));
+    for i_timedif = 1:length(timedif)
+        td = timedif(i_timedif);
+        avgHD = 0;
+        if td == 1
+            seldata = bindata;
+            HD = sum(abs(diff(seldata,1)),2);
+            avgHD = avgHD+sum(HD)/size(seldata,1);
+        else
+            for i = 1:td-1
+                seldata = bindata(i:td:end,:);
+                HD = sum(abs(diff(seldata,1)),2);
+                avgHD = avgHD+sum(HD)/size(seldata,1);
+            end
+        end
+        HD_td(i_timedif) = avgHD;
+    end
+    plot(timedif,HD_td);
+    xlabel('time difference i-j');ylabel('average HD(obs_i,obs_j)');
+    title('Hamming distance for non-consecutive obs.')
 end

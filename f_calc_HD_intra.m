@@ -4,6 +4,7 @@ function HD = f_calc_HD_intra(bindata)
     % note that it results in a triu(X,1) matrix
     % however it is returned in form of a list
     % use f_convert_HDlist2triu(HDlist,n_obs1,n_obs2) to convert it back
+    % this function is connected to f_convert_HDlist2triu(HDlist,n_obs1,n_obs2)
     n_obs = size(bindata,1);
     HD = zeros(n_obs);
     h = waitbar(0,'calculate intra distance');
@@ -14,13 +15,7 @@ function HD = f_calc_HD_intra(bindata)
     end
     close(h)
     % now we convert it to a list
-    BOOL = triu(logical(ones(size(HD))),1);
-    HD = HD(BOOL);
+    %BOOL = triu(logical(ones(size(HD))),1);
+    %HD = HD(BOOL);
 end
 
-function HDmat = f_convert_HDlist2triu(HDlist,n_obs)
-    % convert HD list back to upper triangular matrix
-    HDmat = zeros(n_obs);
-    BOOL = triu(logical(ones(size(HDmat))),1);
-    HDmat(BOOL) = HDlist;
-end

@@ -15,6 +15,7 @@ Included functions:
 - f_openhexfile.m : open hexadecimal source file (n_observations x n_cells).
 - f_calc_HD_intra.m : calculate the Hamming distances between all observations in the bindata matrix (output is upper triangular matrix).
 - f_calc_HD_inter.m : calculate the Hamming distances between all observations in two bindata matrices.
+- f_kt_estimator.m : KT estimator (one-probability from k ones and n observations)
 
 /old function (keep for reference)
 - f_showstats_bindata.m : show some basic properties of bindata matrix (e.g. HD, reference observation, one probabilities).

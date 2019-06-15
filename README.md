@@ -9,6 +9,7 @@ Included functions:
 - make_matfiles.m : generate .mat files (convert selected hex/binary files to bindata and HDintra).
 - show_HDinter.m : visualize HDinter.mat (select file, show Hamming distance as function of temperature difference etc.).
 - show_HDintra.m : visualize intra Hamming distance of selected files (e.g. as function of time or time difference).
+- evaluate_estimator_performance1.m : evaluate estimator performance for various settings (n_cells, n_modelobs, n_estimatorobs). Also includes a plot function.
 
 /low-level funcions used by high-level functions
 - f_openbinaryfile.m : open binary source file and convert to binary matrix (n_observations x n_cells).
